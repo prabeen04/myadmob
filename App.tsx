@@ -7,26 +7,23 @@
  *
  * @format
  */
-
+import 'react-native-gesture-handler';
+import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
 import {SafeAreaView, ScrollView, View, Text, StatusBar} from 'react-native';
+import {ThemeProvider} from 'styled-components';
+import Container from './src/components/Layouts/Contanier';
+import MainStackNavigator from './src/Navigation';
 
 declare const global: {HermesInternal: null | {}};
 
 const App = () => {
   return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <ScrollView contentInsetAdjustmentBehavior="automatic">
-          {global.HermesInternal == null ? null : (
-            <View>
-              <Text>Welcome</Text>
-            </View>
-          )}
-        </ScrollView>
-      </SafeAreaView>
-    </>
+    <NavigationContainer>
+      <ThemeProvider theme={{background: '#eee', color: '#fff'}}>
+        <MainStackNavigator />
+      </ThemeProvider>
+    </NavigationContainer>
   );
 };
 
