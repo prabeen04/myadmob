@@ -12,6 +12,16 @@ function Home(props: IHomeProps) {
         type="outline"
         onPress={() => props.navigation.navigate('Login')}
       />
+      <Button
+        title="Admob"
+        type="outline"
+        onPress={() => props.navigation.navigate('Admob')}
+      />
+      <Button
+        title="AdSenese"
+        type="outline"
+        onPress={() => props.navigation.navigate('AdSense')}
+      />
     </Container>
   );
 }
